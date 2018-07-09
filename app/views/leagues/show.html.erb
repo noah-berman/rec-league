@@ -1,0 +1,7 @@
+<h1> Welcome to the <%= @league.league_name %> home page </h1>
+
+List of all teams in this league:
+<br>
+<% @league.teams.each do |team| %>
+  <%= link_to team.team_name, team_path  %> <br>
+<% end %>

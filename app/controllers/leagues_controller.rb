@@ -35,8 +35,8 @@ class LeaguesController < ApplicationController
     @league = League.find(params[:id])
   end
 
-  def league_params(*args)
-    params.require(:league).permit(*args)
+  def league_params
+    params.require(:league).permit(:league_name, :sport_id)
   end
 
 end

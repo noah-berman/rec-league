@@ -1,9 +1,0 @@
-<h1>Welcome to Rec Leagues!</h1>
-
-<%= link_to "Click here to sign up", new_player_path %>
-
-
-<h3>List of current rec leagues</h3>
-<% @leagues.each do |league| %>
-  <%= link_to league.sport.name, leagues_path %>
-  <% end %>
