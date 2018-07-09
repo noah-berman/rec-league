@@ -13,14 +13,14 @@ class LeaguesController < ApplicationController
   end
 
   def create
-    
+
   end
 
   def edit
   end
 
   def update
-    @league.update[league_params(:)]
+    @league.update[league_params(:league_name)]
     redirect_to @league
   end
 
