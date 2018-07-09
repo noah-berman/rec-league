@@ -2,6 +2,7 @@ class SportsController < ApplicationController
 before_action :set_sport, only: [:show, :edit, :update, :destroy]
 before_action :select_leagues, only: :show
   def index
+    @sports = Sport.all
   end
 
   def show
