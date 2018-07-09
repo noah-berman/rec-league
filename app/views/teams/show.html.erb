@@ -1,7 +1,7 @@
 <h1> Welcome to <%= @team.team_name %>'s home page </h1>
 
-List of players:
+List of players:<br>
 
 <% @team.players.each do |player| %>
-  <%= player.name %>
+  <%= player.name %><br>
 <% end %>
