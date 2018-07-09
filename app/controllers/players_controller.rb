@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  before_action :fetch_player, only: [:show, :destroy, :edit, :update]
 
   def index
   end
@@ -19,5 +20,15 @@ class PlayersController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def fetch_player
+    @player = Player.find(params[:id])
+  end
+
+  def all_players
+    @players = Player.all
   end
 end

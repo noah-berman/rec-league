@@ -14,19 +14,19 @@ ActiveRecord::Schema.define(version: 2018_07_09_172152) do
 
   create_table "leagues", force: :cascade do |t|
     t.string "league_name"
-    t.integer "sport_id_id"
+    t.integer "sport_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["sport_id_id"], name: "index_leagues_on_sport_id_id"
+    t.index ["sport_id"], name: "index_leagues_on_sport_id"
   end
 
   create_table "player_teams", force: :cascade do |t|
-    t.integer "player_id_id"
-    t.integer "team_id_id"
+    t.integer "player_id"
+    t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["player_id_id"], name: "index_player_teams_on_player_id_id"
-    t.index ["team_id_id"], name: "index_player_teams_on_team_id_id"
+    t.index ["player_id"], name: "index_player_teams_on_player_id"
+    t.index ["team_id"], name: "index_player_teams_on_team_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 2018_07_09_172152) do
 
   create_table "teams", force: :cascade do |t|
     t.string "team_name"
-    t.integer "league_id_id"
+    t.integer "league_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["league_id_id"], name: "index_teams_on_league_id_id"
+    t.index ["league_id"], name: "index_teams_on_league_id"
   end
 
 end
