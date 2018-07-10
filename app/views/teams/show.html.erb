@@ -3,5 +3,5 @@
 List of players:<br>
 
 <% @team.players.each do |player| %>
-  <%= player.name %><br>
+  <%= link_to player.name, player %><br>
 <% end %>

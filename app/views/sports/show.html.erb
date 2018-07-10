@@ -4,6 +4,8 @@
 
 <% @selected_leagues.each do |league| %>
 
-<%= link_to league.league_name, league_path(league) %>
+<%= link_to league.league_name, league_path(league) %> <br>
 
 <% end %>
+
+<%= link_to "create a new league", new_league_path %>

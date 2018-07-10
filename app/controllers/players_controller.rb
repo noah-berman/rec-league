@@ -20,6 +20,8 @@ class PlayersController < ApplicationController
   end
 
   def destroy
+    @player.destroy
+    redirect_to sports_path
   end
 
   private

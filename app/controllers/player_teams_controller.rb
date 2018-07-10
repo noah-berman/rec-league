@@ -19,7 +19,6 @@ class PlayerTeamsController < ApplicationController
 
 
   def player_team_params
-    byebug
     params.require(:player_team).permit(:team_id)
   end
 end
