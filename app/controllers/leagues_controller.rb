@@ -10,9 +10,17 @@ class LeaguesController < ApplicationController
   end
 
   def new
+    @league = League.new
+    @sport
   end
 
   def create
+    @league = League.new(league_params)
+    if @league.save
+      redirect_to league_path(@league)
+    else
+      render :new
+    end
 
   end
 

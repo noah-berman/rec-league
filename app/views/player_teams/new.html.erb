@@ -1,0 +1,7 @@
+<h1> Join a team</h1>
+
+<%= form_with url: player_player_teams_path do |f| %>
+  <%= f.label "Team Name:" %><br>
+  <%= f.collection_select(:player_team, @teams, :id, :team_name) %>
+  <%= f.submit %>
+  <% end %>

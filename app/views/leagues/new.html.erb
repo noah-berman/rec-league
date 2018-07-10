@@ -1,0 +1,10 @@
+<h2>Create a new league</h2>
+
+<%= form_with model: @league do |f| %>
+  <%= f.label :league_name %>
+  <%= f.text_field :league_name %>
+
+  <%= f.label "Select Sport:" %>
+  <%= f.collection_select :sport_id, Sport.all, :id, :sports_name %> <br>
+  <%= f.submit %>
+<% end %>
