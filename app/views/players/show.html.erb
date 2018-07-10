@@ -1,0 +1,11 @@
+<h1> <%= @player.name %> </h1>
+
+
+<h2> <%= @player.name %>'s Teams </h2>
+
+<% @player.teams.each do |team| %>
+  <%= link_to team.team_name, team %><br>
+
+  <% end %>
+
+<%= link_to "Join an existing team", new_team_path %>
