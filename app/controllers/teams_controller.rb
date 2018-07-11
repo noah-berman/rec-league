@@ -13,12 +13,14 @@ class TeamsController < ApplicationController
 
   def create
     if player_captain
-
-    @team = Team.new(team_params)
-    if @team.save
-      redirect_to team_path
+      @team = Team.new(team_params)
+      if @team.save
+        redirect_to team_path
+      else
+        render :new
+      end
     else
-      render :new
+      # put in a flash error message on a redirect saying captains only
     end
   end
 
