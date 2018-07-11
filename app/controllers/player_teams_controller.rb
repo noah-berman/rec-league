@@ -7,6 +7,7 @@ class PlayerTeamsController < ApplicationController
   end
 
   def create
+    byebug
     @player_team = PlayerTeam.new(player_team_params)
     if @player_team.save
       redirect_to team_path(@player_team.team_id)
@@ -18,7 +19,7 @@ class PlayerTeamsController < ApplicationController
   private
 
 
-  def player_team_params
-    params.require(:player_team).permit(:team_id)
+  def player_team_params(*args)
+    params.require(:player_team).permit(*args)
   end
 end

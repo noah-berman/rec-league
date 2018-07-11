@@ -14,6 +14,7 @@ def create
     redirect_to player_path(@player)
   else
     @error = "Wrong Username / Password"
+    # flash this errorr
     render :new
   end
 end

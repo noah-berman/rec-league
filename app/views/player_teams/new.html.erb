@@ -1,7 +1,12 @@
 <h1> Join a team</h1>
 
-<%= form_with url: player_player_teams_path do |f| %>
+<%= form_with model: @player_team do |f| %>
   <%= f.label "Team Name:" %><br>
-  <%= f.collection_select(:player_team, @teams, :id, :team_name) %>
+  <%= f.collection_select(:team_id, @teams, :id, :team_name) %>
   <%= f.submit %>
   <% end %>
+
+
+  <!-- ERROR MESSAGE -->
+  <!-- (byebug) params
+<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"dLymLBvZ1hjDp3yU7mi3BnancUAXh/dDgpfXwfrz3lB6AyjNNySWXh+WLi1eTYaVkypRJYXbxX02YYwfCj/HAw==", "player_team"=>"1", "commit"=>"Save ", "controller"=>"player_teams", "action"=>"create", "player_id"=>"1"} permitted: false>  -->

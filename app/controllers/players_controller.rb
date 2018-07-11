@@ -18,8 +18,9 @@ class PlayersController < ApplicationController
       log_in_player(@player.id)
       redirect_to player_path(@player), notice: "Player was succesfully registered"
     else
-      @error = "Those credentials don't match anything we have in the database"
-      render :new
+      # flash this below error
+      @error = @player.errors.full_messages.first
+      render :new, notice: "#{@error}"
     end
   end
 
