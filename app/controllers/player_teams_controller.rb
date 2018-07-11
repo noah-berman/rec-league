@@ -2,7 +2,7 @@ class PlayerTeamsController < ApplicationController
 
   def new
     @teams = Team.all
-    @player = Player.find(params[:player_id])
+    @player = Player.all
     @player_team = PlayerTeam.new
   end
 
@@ -19,7 +19,7 @@ class PlayerTeamsController < ApplicationController
   private
 
 
-  def player_team_params(*args)
-    params.require(:player_team).permit(*args)
+  def player_team_params
+    params.require(:player_team).permit(:player_id, :team_id)
   end
 end

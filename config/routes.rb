@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   resources :teams
   resources :leagues
   resources :sports
-  resources :players do
-    resources :player_teams
-  end
+  resources :players
+  resources :player_teams
   get '/home', to: 'sessions#new', as: 'home'
   post '/home', to: 'sessions#create', as: 'new_session'
   resources :sessions, only: [:new, :create]

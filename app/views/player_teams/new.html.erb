@@ -3,6 +3,7 @@
 <%= form_with model: @player_team do |f| %>
   <%= f.label "Team Name:" %><br>
   <%= f.collection_select(:team_id, @teams, :id, :team_name) %>
+  <%= f.hidden_field :player_id, value: @logged_in_player.id %>
   <%= f.submit %>
   <% end %>
 
