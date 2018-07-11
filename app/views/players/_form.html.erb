@@ -1,16 +1,31 @@
 <%= form_with model: @player do |f| %>
 
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %> <br>
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %> <br>
+  </div>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %> <br>
+  <div class="field">
+    <%= f.label :password_digest %>
+    <%= f.text_field :password_digest %> <br>
+  </div>
 
-  <%= f.label :captain %>
-  <%= f.check_box :captain %> <br> 
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %> <br>
+  </div>
 
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %> <br>
+  </div>
 
-  <%= f.submit %>
+  <div class="field">
+      <%= f.label :captain %>
+      <%= f.check_box :captain %> <br>
+  </div>
+
+    <%= f.submit %>
 
 
 <% end %>
