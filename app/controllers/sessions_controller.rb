@@ -7,9 +7,10 @@ def new
 end
 
 def create
-  @player = Player.find_by(username: user_params[:username])
-  if @player && @player.authenticate(user_params[:password])
-    log_in_user(@player.id)
+  @player = Player.find_by(username: session_params[:username])
+  byebug
+  if @player && @player.authenticate(session_params[:password])
+    log_in_player(@player.id)
     redirect_to player_path(@player)
   else
     @error = "Wrong Username / Password"
@@ -24,7 +25,7 @@ end
 
 private
 
-def user_params
+def session_params
   params.require(:session).permit(:username, :password)
 end
 

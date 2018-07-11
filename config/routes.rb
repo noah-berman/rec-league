@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :players do
     resources :player_teams, only: [:new, :create]
   end
-  get '/home', to: 'main#index', as: 'home'
+  get '/home', to: 'sessions#new', as: 'home'
+  post '/home', to: 'sessions#create', as: 'new_session'
   resources :sessions, only: [:new, :create]
   delete '/logout', to: 'sessions#destroy', as: 'logout'
 

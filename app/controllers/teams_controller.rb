@@ -12,6 +12,8 @@ class TeamsController < ApplicationController
   end
 
   def create
+    if player_captain
+
     @team = Team.new(team_params)
     if @team.save
       redirect_to team_path

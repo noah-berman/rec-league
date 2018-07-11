@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_path unless !!get_logged_in_player
   end
 
+  def player_captain
+    get_logged_in_player.captain == true
+  end
+
 end

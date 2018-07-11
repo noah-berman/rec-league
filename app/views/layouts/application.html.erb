@@ -8,7 +8,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <% if @logged_in_player %>
+      Logged in as: <%= @logged_in_player.username %>
+      <%= link_to "Logout", logout_path, method: 'delete' %>
+    <% else %>
+      <%= link_to "Register", new_player_path %>
+      <%= link_to "Login", new_session_path %>
+    <% end %>
   <body>
     <%= yield %>
   </body>

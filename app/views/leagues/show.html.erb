@@ -6,4 +6,5 @@ List of all teams in this league:
   <%= link_to team.team_name, team_path(team)  %> <br>
 <% end %>
 
-<%= link_to "create a new team", new_team_path %>
+<%= link_to "create a new team", new_team_path %> <br>
+<%= link_to "Return to view all leagues", sport_path(@league.sport) %>
