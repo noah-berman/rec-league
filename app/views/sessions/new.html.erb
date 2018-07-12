@@ -1,10 +1,12 @@
-<h2>Welcome to rec league! Please sign in below.</h2>
+<h2>Welcome to The League! </h2>
+
+<h4>New York's premier recreational sports league.</h4>
+
+<h4>Please sign in below:</h4>
 
 <%= form_with(scope: "session", url: sessions_path, local: true) do |form| %>
   <% if @error %>
     <div id="error_explanation">
-      <h2>An error prohibited this user from being saved:</h2>
-
       <ul>
         <li><%= @error %></li>
       </ul>

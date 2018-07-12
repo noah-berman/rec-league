@@ -1,6 +1,11 @@
 <%= form_with model: @player do |f| %>
 
-<p id="notice"><%= notice %></p>
+<% if flash[:errors] %>
+  <ol> <% flash[:errors].each do |error| %>
+    <li> <%= error %> </li>
+  <% end %></ol>
+<% end  %>
+
 
 <p>
   <div class="field">

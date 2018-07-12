@@ -8,5 +8,8 @@
 
 <% end %>
 
+<% if @logged_in_player.admin %>
 <%= link_to "create a new league", new_league_path %><br>
+<% else %>
+<% end %>
 <%= link_to "Return to view all sports", sports_path %>

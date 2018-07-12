@@ -8,13 +8,11 @@ end
 
 def create
   @player = Player.find_by(username: session_params[:username])
-  byebug
   if @player && @player.authenticate(session_params[:password])
     log_in_player(@player.id)
     redirect_to player_path(@player)
   else
-    @error = "Wrong Username / Password"
-    # flash this errorr
+    @error = "Those credentials don't match anything we have in the database"
     render :new
   end
 end

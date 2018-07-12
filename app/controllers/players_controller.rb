@@ -19,8 +19,8 @@ class PlayersController < ApplicationController
       redirect_to player_path(@player), notice: "Player was succesfully registered"
     else
       # flash this below error
-      @error = @player.errors.full_messages.first
-      render :new, notice: "#{@error}"
+      flash[:errors] = @player.errors.full_messages
+      render :new
     end
   end
 
@@ -31,8 +31,10 @@ class PlayersController < ApplicationController
   end
 
   def destroy
+    if @logged_in_player == @player
     @player.destroy
     redirect_to sports_path
+  end
   end
 
   private

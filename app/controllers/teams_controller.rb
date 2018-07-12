@@ -20,7 +20,7 @@ class TeamsController < ApplicationController
         render :new
       end
     else
-      # put in a flash error message on a redirect saying captains only
+
     end
   end
 
