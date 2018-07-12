@@ -10,12 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- */
-<<<<<<< HEAD:app/assets/stylesheets/application.css
-
-.error_explanation {
-  color: red;
-}
-=======
+*/
 @import "bootstrap";
->>>>>>> bootstrap-practice:app/assets/stylesheets/application.scss
+
+.navbar {
+  background-color: #807d7d87;
+}

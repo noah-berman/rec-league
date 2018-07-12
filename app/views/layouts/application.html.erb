@@ -8,15 +8,22 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <% if @logged_in_player %>
-      Logged in as: <%= @logged_in_player.username %>
-      <%= link_to "Logout", logout_path, method: 'delete' %>
-      <%= link_to "My Profile", player_path(@logged_in_player) %>
-    <% else %>
-      <!-- <%= link_to "Register", new_player_path %> -->
-      <!-- <%= link_to "Login", new_session_path %> -->
-    <% end %>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if @logged_in_player %>
+              <li>Logged in as: <%= @logged_in_player.username %></li>
+              <li><%= link_to "My Profile", player_path(@logged_in_player) %></li>
+              <li><%= link_to "Logout", logout_path, method: 'delete' %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
   <body>
-    <%= yield %>
+    <div class ="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
