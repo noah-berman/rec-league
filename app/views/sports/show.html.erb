@@ -1,13 +1,19 @@
 <h1> <%= @sport.sports_name %> </h1>
 
-<h3> All leagues for <%= @sport.sports_name %> </h3>
 
-<% @selected_leagues.each do |league| %>
+<% if @sport.leagues.empty? %>
+  <%= "There are currently no leagues for this sport. Please contact an administrator to set up a league." %>
+<% else %>
+  <h3> All leagues for <%= @sport.sports_name %> </h3>
 
-<%= link_to league.league_name, league_path(league) %> <br>
+  <% @selected_leagues.each do |league| %>
 
+  <%= link_to league.league_name, league_path(league) %> <br>
+
+  <% end %>
 <% end %>
 
+<hr>
 <% if @logged_in_player.admin %>
 <%= link_to "create a new league", new_league_path %><br>
 <% else %>

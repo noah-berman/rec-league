@@ -1,7 +1,12 @@
 <h1> Welcome to <%= @team.team_name %>'s home page </h1>
 
-List of players:<br>
-
-<% @team.players.each do |player| %>
-  <%= link_to player.name, player %><br>
+<% if @team.players.empty? %>
+  <%= "There are no players on this team." %>
+<% else %>
+  List of players: <br>
+  <% @team.players.each do |player| %>
+    <%= link_to player.name, player %><br>
+  <% end %>
 <% end %>
+<br>
+<%= link_to "Return to view all #{@team.league.league_name} teams", league_path(@team.league) %>

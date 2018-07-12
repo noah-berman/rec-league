@@ -1,10 +1,22 @@
 <h1> Welcome to the <%= @league.league_name %> home page </h1>
 
-List of all teams in this league:
-<br>
-<% @league.teams.each do |team| %>
-  <%= link_to team.team_name, team_path(team)  %> <br>
+<% if @league.teams.empty? %>
+  <%= "There are currently no teams in this league." %> <br>
+    <% if @logged_in_player.captain %>
+      <%= "As a League Captain, you may create your own." %>
+    <% else %>
+      <%= "Contact a League Captain to set up a team." %>
+    <% end %>
+<% else %>
+  List of all teams in this league:
+  <br>
+  <% @league.teams.each do |team| %>
+    <%= link_to team.team_name, team_path(team)  %> <br>
+  <% end %>
 <% end %>
 
-<%= link_to "create a new team", new_team_path %> <br>
+<hr>
+<% if @logged_in_player.captain %>
+  <%= link_to "Create a new team", new_team_path %> <br>
+<% end %>
 <%= link_to "Return to view all leagues", sport_path(@league.sport) %>

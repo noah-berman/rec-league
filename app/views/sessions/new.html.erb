@@ -6,7 +6,7 @@
 
 <%= form_with(scope: "session", url: sessions_path, local: true) do |form| %>
   <% if @error %>
-    <div id="error_explanation">
+    <div class="error_explanation">
       <ul>
         <li><%= @error %></li>
       </ul>
@@ -22,10 +22,10 @@
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
-
+  <br>
   <div class="actions">
     <%= form.submit "Log in" %>
   </div>
 <% end %>
-
+<hr>
 <%= link_to "Register New Player", new_player_path %>

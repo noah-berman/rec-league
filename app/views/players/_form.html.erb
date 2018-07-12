@@ -1,10 +1,12 @@
 <%= form_with model: @player do |f| %>
 
-<% if flash[:errors] %>
-  <ol> <% flash[:errors].each do |error| %>
-    <li> <%= error %> </li>
-  <% end %></ol>
-<% end  %>
+<div class="error_explanation">
+  <% if flash[:errors] %>
+    <ol> <% flash[:errors].each do |error| %>
+      <li> <%= error %> </li>
+      <% end %></ol>
+  <% end  %>
+</div>
 
 
 <p>
@@ -32,7 +34,7 @@
       <%= f.label :captain %>
       <%= f.check_box :captain %> <br>
   </div>
-
+  <br>
     <%= f.submit %>
 
 

@@ -13,8 +13,8 @@
       <%= link_to "Logout", logout_path, method: 'delete' %>
       <%= link_to "My Profile", player_path(@logged_in_player) %>
     <% else %>
-      <%= link_to "Register", new_player_path %>
-      <%= link_to "Login", new_session_path %>
+      <!-- <%= link_to "Register", new_player_path %> -->
+      <!-- <%= link_to "Login", new_session_path %> -->
     <% end %>
   <body>
     <%= yield %>

@@ -8,14 +8,14 @@ class Player < ApplicationRecord
   validates :username, uniqueness: true
   validate :username_must_be_normal_characters
 
-  def name
-    self.first_name + " " + self.last_name
-  end
-
   def username_must_be_normal_characters
     if username.match(/[^a-zA-Z0-9]/)
-      errors.add(:username, "Username must be alphanumeric characters")
+      errors.add(:username, "must be alphanumeric characters")
     end
+  end
+
+  def name
+    self.first_name + " " + self.last_name
   end
 
 
