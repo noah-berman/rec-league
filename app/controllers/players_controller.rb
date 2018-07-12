@@ -32,9 +32,9 @@ class PlayersController < ApplicationController
 
   def destroy
     if @logged_in_player == @player
-    @player.destroy
-    redirect_to sports_path
-  end
+      @player.destroy
+      redirect_to home_path
+    end
   end
 
   private

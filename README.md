@@ -20,6 +20,8 @@ This application was developed by Noah Berman and Michael O'Brien for Flatiron S
 - Additional social elements for player profiles
   * Add more information, such as contact info and ability to directly send messages or leave notes
 
+- Refactor code to be DRY
+
 *- COPYRIGHT -*
 
 Copyright 2018 Noah Berman and Michael O'Brien

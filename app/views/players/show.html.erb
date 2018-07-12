@@ -7,12 +7,12 @@
   <%= link_to team.team_name, team %><br>
 
   <% end %> <br> <br> <br>
+  <hr>
 
 <% if @player == @logged_in_player %>
   <%= link_to "Join an existing team", new_player_team_path %> <br>
   <%= link_to "Leave a team", new_player_team_path %> <br>
   <%= link_to "Delete this player", player_path(@player), method: 'delete' %> <br>
-
   <% if @player.captain? %>
     <%= link_to "Create a team", new_team_path %><br>
   <% end %>
