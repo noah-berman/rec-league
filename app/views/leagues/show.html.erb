@@ -1,4 +1,4 @@
-<h1> Welcome to the <%= @league.league_name %> home page </h1>
+<h1> <%= @league.league_name %> League Page </h1>
 
 <% if @league.teams.empty? %>
   <%= "There are currently no teams in this league." %> <br>
@@ -19,4 +19,4 @@
 <% if @logged_in_player.captain %>
   <%= link_to "Create a new team", new_team_path %> <br>
 <% end %>
-<%= link_to "Return to view all leagues", sport_path(@league.sport) %>
+<%= link_to "Return to view all leagues for #{@league.sport.sports_name}", sport_path(@league.sport) %>

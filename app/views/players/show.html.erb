@@ -1,7 +1,7 @@
 <h1> <%= @player.name %> </h1>
 
 
-<h2> <%= @player.name %>'s Teams </h2>
+<h2> Teams </h2>
   <% if @player.teams.empty? && @player == @logged_in_player %>
     <p> <%= @player.name %> is not part of any teams. Please click on the button below to join a team.
   <% else %>

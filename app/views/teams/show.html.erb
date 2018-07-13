@@ -1,4 +1,12 @@
-<h1> Welcome to <%= @team.team_name %>'s home page </h1>
+<h1 class="display-1"> Welcome to <%= @team.team_name %>'s Team Page </h1>
+
+<h4><em>
+  Home of the <%= @team.team_mascot %>
+</em></h4>
+
+<blockquote class="blockquote text-center"><em>"<%= @team.team_motto %>"</em></blockquote>
+
+
 
 <% if @team.players.empty? %>
   <%= "There are no players on this team." %>
@@ -10,4 +18,4 @@
 <% end %>
 <br>
 <hr>
-<%= link_to "Return to view all #{@team.league.league_name} teams", league_path(@team.league) %>
+<%= link_to "Return to view all teams in the #{@team.league.league_name} league", league_path(@team.league) %>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title> The League </title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
+    <!-- <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <%= link_to "RecLeague", '/home', id: "logo" %>
         <nav>
@@ -21,7 +21,21 @@
           </ul>
         </nav>
       </div>
-    </header>
+    </header> -->
+
+
+<div class="ui inverted menu">
+  <div class="header item">RecLeagues</div>
+  <div class="item"> <%= link_to "My Profile", @logged_in_player %> </div>
+  <div class="right menu">
+    <% if @logged_in_player %>
+      <p class="item" style="margin-bottom: 0px;"> Logged in as: <%= @logged_in_player.name %> </p>
+      <p class="item"> <%= link_to "Log out", logout_path, method: 'delete' %> </p>
+    <% else %>
+    <p class="item"><%= link_to "Register", new_player_path %></li>
+    <% end %>
+  </div>
+</div>
 
   <body>
     <div class ="container">

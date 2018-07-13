@@ -20,6 +20,11 @@ This application was developed by Noah Berman and Michael O'Brien for Flatiron S
 - Additional social elements for player profiles
   * Add more information, such as contact info and ability to directly send messages or leave notes
 
+- Captain/Admin functionality to be able to manage players on teams
+  * Create a "free agent" list, invite system
+
+- Build out "My Profile" page to allow for more customization, inclusion of a message
+
 - Refactor code to be DRY
 
 *- COPYRIGHT -*

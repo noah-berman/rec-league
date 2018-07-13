@@ -29,17 +29,18 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-gem 'bootstrap', '~> 4.1.1'
+gem 'semantic-ui-sass'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap-sass', '3.3.7'
+# gem 'bootstrap-sass', '3.3.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
 end
 
 group :development do

@@ -4,7 +4,7 @@
 <% if @sport.leagues.empty? %>
   <%= "There are currently no leagues for this sport. Please contact an administrator to set up a league." %>
 <% else %>
-  <h3> All leagues for <%= @sport.sports_name %> </h3>
+  <h3> Active leagues for <%= @sport.sports_name %> </h3>
 
   <% @selected_leagues.each do |league| %>
 

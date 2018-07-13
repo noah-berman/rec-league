@@ -1,4 +1,4 @@
-@import "bootstrap";
+@import "semantic-ui";
 
 // body {
 //   padding-top: 60px;
@@ -20,14 +20,22 @@
 //   margin-bottom: 10px;
 // }
 
-.navbar {
-  background-color: #807d7d87;
+// .navbar {
+//   background-color: #807d7d87;
+// }
+//
+// a {
+//   color: #0018e2;
+// }
+//
+// .nav-link {
+//   display: inline;
+// }
+
+div {
+  margin-left: 10px;
 }
 
-a {
-  color: #0018e2;
-}
-
-.nav-link {
-  display: inline;
+.ui.menu {
+  border-radius: 0px;
 }
