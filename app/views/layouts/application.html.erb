@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecLeague</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <header class="navbar navbar-fixed-top navbar-inverse">
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
+        <%= link_to "RecLeague", '/home', id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <% if @logged_in_player %>
-              <li>Logged in as: <%= @logged_in_player.username %></li>
-              <li><%= link_to "My Profile", player_path(@logged_in_player) %></li>
-              <li><%= link_to "Logout", logout_path, method: 'delete' %></li>
+            <li class="logged_in_as_text"> Logged in as: <%= @logged_in_player.name %> </li>
+            <li><%= link_to "My Profile", @logged_in_player %></li>
+              <li><%= link_to "Log out", logout_path, method: 'delete' %></li>
+            <% else %>
+              <li><%= link_to "Register", new_player_path %></li>
             <% end %>
           </ul>
         </nav>
       </div>
     </header>
+
   <body>
     <div class ="container">
       <%= yield %>

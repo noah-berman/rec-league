@@ -2,9 +2,12 @@
 
 
 <h2> <%= @player.name %>'s Teams </h2>
-
-<% @player.teams.each do |team| %>
-  <%= link_to team.team_name, team %><br>
+  <% if @player.teams.empty? && @player == @logged_in_player %>
+    <p> <%= @player.name %> is not part of any teams. Please click on the button below to join a team.
+  <% else %>
+    <% @player.teams.each do |team| %>
+      <%= link_to team.team_name, team %><br>
+    <% end %>
 
   <% end %> <br> <br> <br>
   <hr>
